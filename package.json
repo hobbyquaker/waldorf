@@ -1,0 +1,33 @@
+{
+  "name": "waldorf",
+  "version": "1.0.0",
+  "description": "Simple Mattermost Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hobbyquaker/waldorf.git"
+  },
+  "keywords": [
+    "Mattermost",
+    "Chat",
+    "Bot",
+    "Javascript"
+  ],
+  "author": "Sebastian Raff <hq@ccu.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hobbyquaker/waldorf/issues"
+  },
+  "homepage": "https://github.com/hobbyquaker/waldorf#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "node-schedule": "^1.2.1",
+    "request": "^2.81.0",
+    "yalm": "^4.0.2",
+    "yargs": "^7.0.2"
+  }
+}
