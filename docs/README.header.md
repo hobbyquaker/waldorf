@@ -50,6 +50,8 @@ waldorf -u http://127.0.0.1:8065/hooks/ \
 The -t option supplies the Secret Mattermost generated for the Outgoing Webhook, the -c options define Channels and the 
 Secrets of the Incoming Webhooks.
 
+I suggest to use [PM2](http://pm2.keymetrics.io/) to start Waldorf.
+
 
 # Scripts
 
