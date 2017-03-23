@@ -1,5 +1,12 @@
 # Waldorf
 
+[mit-badge]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat
+[mit-url]: LICENSE
+[![License][mit-badge]][mit-url]
+[![NPM version](https://badge.fury.io/js/waldorf.svg)](http://badge.fury.io/js/waldorf)
+[![Dependency Status](https://david-dm.org/hobbyquaker/waldorf/status.svg)](https://david-dm.org/hobbyquaker/waldorf)
+[![devDependency Status](https://david-dm.org/hobbyquaker/waldorf/dev-status.svg)](https://david-dm.org/hobbyquaker/waldorf?type=dev)
+
 > Simple Mattermost Bot 🤡🤠
 
 Uses Webhooks
