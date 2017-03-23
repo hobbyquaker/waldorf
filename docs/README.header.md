@@ -56,10 +56,8 @@ schedule('37 13 * * *', () => pub('town-square', '1337 time!!1! 🤓'));
 ```
 
 ```javascript
-// Respond "Hi @user" when someone says "Hello"
-sub(/Hello/, (match, user, channel) => {
-    pub(channel, `Hi @${user}`);
-});
+// Respond "Hi @user" when someone says "Hello" or "hallo" ...
+sub(/[Hh][ea]llo/, (match, user, channel) => pub(channel, `Hi @${user}`));
 ```
 
 ```javascript
