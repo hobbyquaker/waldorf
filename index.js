@@ -57,6 +57,12 @@ app.post('/', (req, res) => {
 });
 
 function msg(text, user, channel) {
+    /**
+     * @callback subscribeCallback
+     * @param {string|string[]} text - text or .match(RegExp) array
+     * @param {string} user - the Name of the User that said something
+     * @param {string} channel - the Channel where something was said
+     */
     Object.keys(callbacks).forEach(key => {
         if (typeof callbacks[key].rx === 'object') {
             if (callbacks[key].rx.test(text)) callbacks[key].cb(text.match(callbacks[key].rx), user, channel);
@@ -171,9 +177,10 @@ function runScript(script, name) {
             }
         },
         /**
-         *
-         * @param channel
-         * @param text
+         * Send Text to a Channel
+         * @method pub
+         * @param {string} channel
+         * @param {string} text
          */
         pub: function Sandbox_pub(channel, text) {
             if (!channels[channel]) {
@@ -197,9 +204,13 @@ function runScript(script, name) {
             });
         },
         /**
-         * @param rx
-         * @param callback
-         * @returns {id}
+         * Add a Subscription that calls a Callback when pattern matches text said in a Channel
+         * @method sub
+         * @param {(string|RegExp)} pattern
+         * @param {subscribeCallback} callback
+         * @returns {subscriptionId}
+         * @example // Respond "Hi @User" when someone says "Hello" or "hello"
+         * sub(/[Hh]ello/, (match, user, channel) => pub(`Hi @${user}`));
          */
         sub: function Sandbox_sub(rx, callback) {
             let id = nextId();
@@ -210,7 +221,9 @@ function runScript(script, name) {
             return id;
         },
         /**
-         * @param id
+         * Remove a Subscription
+         * @method unsub
+         * @param {subscriptionId} id
          */
         unsub: function Sandbox_unsub(id) {
             if (!callbacks[id]) {
@@ -238,7 +251,6 @@ function runScript(script, name) {
          *
          * // every Sunday at 2:30pm
          * schedule({hour: 14, minute: 30, dayOfWeek: 0}, callback);
-         * @see {@link sunSchedule} for scheduling based on sun position.
          */
         schedule: function Sandbox_schedule(pattern, /* optional */ options, callback) {
 

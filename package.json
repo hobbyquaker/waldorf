@@ -1,6 +1,6 @@
 {
   "name": "waldorf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Mattermost Bot",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,11 @@
     "request": "^2.81.0",
     "yalm": "^4.0.2",
     "yargs": "^7.0.2"
+  },
+  "devDependencies": {
+    "fs-then-native": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "jsdoc-to-markdown": "^3.0.0"
   }
 }
