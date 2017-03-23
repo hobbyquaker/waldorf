@@ -14,14 +14,14 @@ Uses Webhooks
 
 # Mattermost Setup
 
-* In the System Console enable:
-    * Incoming Webhooks
-    * Outgoing Webhooks
-    * override usernames
+* In the System Console - Integrations - Custom Integrations:
+    * Enable Incoming Webhooks
+    * Enable Outgoing Webhooks
+    * Enable Integrations to Override Usernames
      
 * Create the Webhooks in the Team Settings - Integrations
     * an Incoming Webhook for every Channel where Waldorf should be able to say something
-    * a Outgoing Webhook, you don't need to select a Channel here - than Waldorf will be able to subscribe to messages 
+    * an Outgoing Webhook, you don't need to select a Channel here - then Waldorf will be able to subscribe to messages 
     in every Channel. Define desired Trigger Words, e.g. "@waldorf". As Callback URL you need to supply the IP Address
     and the Port where Waldorf listens, if Waldorf runs on the same server as Mattermost you can use e.g. 
     http://127.0.0.1:31337
@@ -40,7 +40,7 @@ waldorf -u http://127.0.0.1:8065/hooks/ \
     -c ij6osdf3ofnidp199ronuinwne:town-square \
     -c hiirtud1spfwmfegd3pejamzsr:another-channel 
 ```
-The -t option supplies the Secret Mattermost generated for the Outgoing Webhook, the -c options define Dhannels and the 
+The -t option supplies the Secret Mattermost generated for the Outgoing Webhook, the -c options define Channels and the 
 Secrets of the Incoming Webhooks.
 
 
